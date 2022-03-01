@@ -10,13 +10,12 @@ namespace JogodaVelha
             int opc;
             int numerogame = 0;
             string historico = "";
-            JogoDaVelha nJogo = null;
+            JogoDaVelha nJogo;
             do
             {
-                Console.ReadKey();
-                Console.Clear();
+
                 
-                opc = menu();
+                opc = Menu();
                 switch (opc)
                 {
                     case 1:
@@ -43,6 +42,7 @@ namespace JogodaVelha
                                 }
                             } while (nJogo.VerificaPosicao(posicao)==false);
                             play = nJogo.Adicionar(posicao, player, play);
+
                             if (nJogo.SituacaoJogo() != true)
                             {
                                 if (play == 1)
@@ -102,6 +102,7 @@ namespace JogodaVelha
                         Console.WriteLine("Velha: {0}", velha);
                         break;
                     case 3:
+                        Console.Clear();
                         Console.WriteLine(">>>>HISTORICO<<<<");
                         Console.WriteLine(historico);
                         break;
@@ -114,10 +115,12 @@ namespace JogodaVelha
                         Console.WriteLine("Opção Invalida!\nDigite novamente.");
                         break;
                 }
-            }while(opc != 0);
+                Console.ReadKey();
+                Console.Clear();
+            } while(opc != 0);
         }
 
-        static int menu()
+        static int Menu()
         {
             int opc;
             Console.WriteLine("=========JOGO DA VELHA=========");

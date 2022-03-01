@@ -103,6 +103,7 @@ namespace JogodaVelha
 
         public bool VerificaPosicao(int posicao)
         {
+                //ta beleza
             bool tablz = false;
             switch (posicao)
             {
